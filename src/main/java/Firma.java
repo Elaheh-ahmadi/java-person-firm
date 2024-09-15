@@ -53,6 +53,49 @@ public class Firma {
     public ArrayList<Person> getPersons() {
         return this.persons;
     }
+    public Person finde(String nachname) {
+        for(Person p: this.persons) {
+            if(p.getNachname().equals(nachname)) {
+                return p;
+            }
+        }
+
+        return null;
+    }
+
+    public int minAlter() {
+        int min = 60;
+        for(Person p: this.persons) {
+            if(p.getAlter() < min) {
+                min = p.getAlter();
+            }
+        }
+
+        return min;
+    }
+
+    public int maxAlter() {
+        int max = 0;
+        for(Person p: this.persons) {
+            if(p.getAlter() > max) {
+                max = p.getAlter();
+            }
+        }
+
+        return max;
+    }
+
+    public double avgAlter() {
+        int avg = 0;
+        for(Person p: this.persons) {
+            avg += p.getAlter();
+        }
+        return (double) avg / this.persons.size();
+    }
+
+    public void print() {
+        System.out.println(this.toString());
+    }
 
     @Override
     public String toString() {

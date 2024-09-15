@@ -16,7 +16,7 @@ public class Person {
     }
 
     public void setVorname(String vorname) throws InvalidAttributeValueException {
-        if(vorname == null || vorname.isEmpty()) {
+        if(vorname == null || vorname.length() <=3 ) {
             throw new InvalidAttributeValueException("Vorname cannot be null or empty");
         }
 
@@ -28,7 +28,7 @@ public class Person {
     }
 
     public void setNachname(String nachname) throws InvalidAttributeValueException {
-        if(nachname ==null || nachname.isEmpty()){
+        if(nachname == null || nachname.length() <= 3){
             throw new InvalidAttributeValueException("nachname cannot be null or empty");
         }
 
